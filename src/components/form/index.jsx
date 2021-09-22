@@ -43,6 +43,13 @@ export default function Form({name, setName}) {
   }
   return (
     <Box
+    margin="15vh auto"
+    border="solid black 3px"
+    width="300px"
+    borderRadius="10px"
+    backgroundColor="whitesmoke"
+    padding="15px 0"
+    boxShadow="14px 14px 5px"
       onSubmit={handleSubmit(dataAdd)}
       display="flex"
       flexDirection="column"

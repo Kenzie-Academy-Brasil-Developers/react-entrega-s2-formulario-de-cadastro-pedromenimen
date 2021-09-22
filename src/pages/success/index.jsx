@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-const Success = ({ name }) => {
+const Success = () => {
   const history = useHistory();
   const params = useParams();
   return (

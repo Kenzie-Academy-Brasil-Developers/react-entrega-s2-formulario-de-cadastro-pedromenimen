@@ -4,8 +4,11 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormButton from "../button";
+import { useHistory } from "react-router";
 
-export default function Form({setName}) {
+
+export default function Form({name, setName}) {
+  const history = useHistory()
   const formSchema = yup.object().shape({
     name: yup.string().required().matches("^[A-Za-z\\s]+$", "Campo inválido"),
     email: yup
@@ -35,7 +38,9 @@ export default function Form({setName}) {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-  const dataAdd = (data) => console.log(data);
+  const dataAdd = () => {
+    history.push(`/success/${name}`)
+  }
   return (
     <Box
       onSubmit={handleSubmit(dataAdd)}

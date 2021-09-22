@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Form setName={setName} className="form"></Form>
+          <Form name={name} setName={setName} className="form"></Form>
         </Route>
-        <Route exact path={`/success/${name}`}>
+        <Route exact path={`/success/:name`}>
           <Success name={name}></Success>
         </Route>
       </Switch>
